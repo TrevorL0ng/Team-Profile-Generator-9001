@@ -21,4 +21,13 @@ const render = employees => {
     return renderMain(html.join(""));
 };
 
-
+//Creating the render calls with the templates for appropriate fields using fs and path
+const renderEngineer = engineer => {
+    let template = fs.readFileSync(path.resolve(templDir, "engineer.html"), "utf-8");
+    template = fillField(template, "name", engineer.getName());
+    template = fillField(template, "role", engineer.getRole());
+    template = fillField(template, "email", engineer.getEmail());
+    template = fillField(template, "id", engineer.getId());
+    template = fillField(template, "github", engineer.getGithub());
+    return template;
+}

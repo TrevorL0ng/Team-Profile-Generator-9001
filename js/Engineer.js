@@ -8,6 +8,7 @@ class Engineer extends Employee{
         this.github = github;
         this.role = "Engineer";
     };
+    
 //Returning the only new value not extended by Employee
     getGithub(){
         return this.github;

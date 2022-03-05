@@ -7,7 +7,8 @@ class Intern extends Employee {
         super(name, email, id);
         this.school = school;
         this.role = "Intern";
-    }
+    };
+
 //Returning new value created above not extended by Employee
     getSchool(){
         return this.school;

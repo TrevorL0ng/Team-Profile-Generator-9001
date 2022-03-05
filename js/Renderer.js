@@ -51,3 +51,15 @@ const renderManager = manager => {
     template = fillField(template, "github", manager.getGithub());
     return template;
 };
+
+renderMain = html => {
+    const template = fs.readFileSync(path.resolve(templDir, "team.html"), "utf-8");
+    return fillField(template, "team", html);
+};
+
+const fillField = (templDir, field, value) => {
+    const pattern = new RegExp("{{" + field + "}}", "gm");
+    return template.replace(pattern, value);
+};
+
+module.exports = render;

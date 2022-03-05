@@ -30,4 +30,24 @@ const renderEngineer = engineer => {
     template = fillField(template, "id", engineer.getId());
     template = fillField(template, "github", engineer.getGithub());
     return template;
-}
+};
+
+const renderIntern = intern => {
+    let template = fs.readFileSync(path.resolve(templDir, "intern.html"), "utf-8");
+    template = fillField(template, "name", intern.getName());
+    template = fillField(template, "role", intern.getRole());
+    template = fillField(template, "email", intern.getEmail());
+    template = fillField(template, "id", intern.getId());
+    template = fillField(template, "github", intern.getGithub());
+    return template;
+};
+
+const renderManager = manager => {
+    let template = fs.readFileSync(path.resolve(templDir, "manager.html"), "utf-8");
+    template = fillField(template, "name", manager.getName());
+    template = fillField(template, "role", manager.getRole());
+    template = fillField(template, "email", manager.getEmail());
+    template = fillField(template, "id", manager.getId());
+    template = fillField(template, "github", manager.getGithub());
+    return template;
+};

@@ -1,0 +1,23 @@
+{
+  "name": "team-profile-generator-9001",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TrevorL0ng/Team-Profile-Generator-9001.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TrevorL0ng/Team-Profile-Generator-9001/issues"
+  },
+  "homepage": "https://github.com/TrevorL0ng/Team-Profile-Generator-9001#readme",
+  "dependencies": {
+    "inquirer": "^8.2.0",
+    "jest": "^27.5.1"
+  }
+}

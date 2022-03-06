@@ -43,3 +43,9 @@ test("Able to get ID", () => {
     const i = new Employee("Theolin", "Theolin@Strider.moc", id);
     expect(i.getID()).toBe(id);
 });
+
+test("Able to get role of employee", () => {
+    const role = "Employee";
+    const i = new Employee("Theolin", "Theolin@Strider.moc", 3);
+    expect(i.getRole()).toBe(role);
+});

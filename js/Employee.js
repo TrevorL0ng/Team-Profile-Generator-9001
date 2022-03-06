@@ -4,22 +4,22 @@ class Employee {
         this.name = name;
         this.email = email;
         this.id = id;
-        this.role;
+        this.role = "Employee";
     }
 
 //Returning all values created above 
     getName(){
-        return this.name;
-    }
+        return this.name
+    };
     getEmail(){
-        return this.email;
-    }
+        return this.email
+    };
     getID(){
-        return this.id;
-    }
+        return this.id
+    };
     getRole(){
-        return this.role;
-    }
+        return this.role
+    };
 }
 
 module.exports = Employee

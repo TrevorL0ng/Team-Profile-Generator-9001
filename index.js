@@ -44,4 +44,29 @@ function addTeammate(){
 }
 
 //Function to add an Engineer
+function engineerInfo(){
+    inquirer.prompt([{
+        type:"input", 
+        name:"name",
+        message:"What is this Engineer's name?"},
+        {
+            type:"input",
+            name:"email",
+            message:"What is this Engineer's email?"},
+        {
+            type:"input",
+            name:"id",
+            message:"What is this Engineer's id?"},
+        {
+            type:"input",
+            name:"github",
+            message:"What is this Engineer's Github Username?"}
+
+        ]).then(val => {
+            const engineer = new Engineer(val.name, val.email, val.id, val.gihub);
+            teammates.push(engineer);
+            console.log(engineer);
+            addTeammate();
+        })
+};
 

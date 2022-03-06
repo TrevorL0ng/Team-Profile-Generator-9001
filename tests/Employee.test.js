@@ -15,6 +15,12 @@ test("Able to set name", () => {
 
 test("Able to get email", () => {
     const email = "Theolin@Strider.moc";
-    const i = new Employee("Theolin", email, 3);
+    const i = new Employee("Theolin", email);
     expect(i.email).toBe(email);
+});
+
+test("Able to get ID", () => {
+    const id = 3;
+    const i = new Employee("Theolin", "Theolin@Strider.moc", id);
+    expect(i.id).toBe(id);
 });

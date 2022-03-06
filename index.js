@@ -90,10 +90,36 @@ function internInfo(){
             message:"What is school did this Intern attend?"}
 
         ]).then(val => {
-            const intern = new Intern(val.name, val.email, val.id, val.gihub);
+            const intern = new Intern(val.name, val.email, val.id, val.school);
             teammates.push(intern);
             console.log(intern);
             addTeammate();
         })
 };
 
+//Function to add a Manager
+function managerInfo(){
+    inquirer.prompt([{
+        type:"input", 
+        name:"name",
+        message:"What is this Manager's name?"},
+        {
+            type:"input",
+            name:"email",
+            message:"What is this Manager's email?"},
+        {
+            type:"input",
+            name:"id",
+            message:"What is this Manager's id?"},
+        {
+            type:"input",
+            name:"officeNo",
+            message:"What is this Manager's Office Number?"}
+
+        ]).then(val => {
+            const manager = new Manager(val.name, val.email, val.id, val.officeNo);
+            teammates.push(manager);
+            console.log(manager);
+            addTeammate();
+        })
+};

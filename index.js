@@ -70,3 +70,30 @@ function engineerInfo(){
         })
 };
 
+//Function to add an Intern
+function internInfo(){
+    inquirer.prompt([{
+        type:"input", 
+        name:"name",
+        message:"What is this Intern's name?"},
+        {
+            type:"input",
+            name:"email",
+            message:"What is this Intern's email?"},
+        {
+            type:"input",
+            name:"id",
+            message:"What is this Intern's id?"},
+        {
+            type:"input",
+            name:"school",
+            message:"What is school did this Intern attend?"}
+
+        ]).then(val => {
+            const intern = new Intern(val.name, val.email, val.id, val.gihub);
+            teammates.push(intern);
+            console.log(intern);
+            addTeammate();
+        })
+};
+

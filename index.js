@@ -63,7 +63,7 @@ function engineerInfo(){
             message:"What is this Engineer's Github Username?"}
 
         ]).then(val => {
-            const engineer = new Engineer(val.name, val.email, val.id, val.gihub);
+            const engineer = new Engineer(val.name, val.email, val.id, val.github);
             teammates.push(engineer);
             console.log(engineer);
             addTeammate();
@@ -123,3 +123,12 @@ function managerInfo(){
             addTeammate();
         })
 };
+
+//Function to write the final file
+function writeList(){
+    if(!fs.existsSync(outputDir)){
+        fs.mkdirSync(outputDir)
+    }
+    fs.writeFileSync(output, render(teammates), "UTF-8");
+}
+start();

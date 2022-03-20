@@ -38,7 +38,7 @@ const renderIntern = intern => {
     template = fillField(template, "role", intern.getRole());
     template = fillField(template, "email", intern.getEmail());
     template = fillField(template, "id", intern.getId());
-    template = fillField(template, "github", intern.getGithub());
+    template = fillField(template, "school", intern.getschool());
     return template;
 };
 
@@ -48,7 +48,7 @@ const renderManager = manager => {
     template = fillField(template, "role", manager.getRole());
     template = fillField(template, "email", manager.getEmail());
     template = fillField(template, "id", manager.getId());
-    template = fillField(template, "github", manager.getGithub());
+    template = fillField(template, "officeNo", manager.getOfficeNumber());
     return template;
 };
 
@@ -57,7 +57,7 @@ renderMain = html => {
     return fillField(template, "team", html);
 };
 
-const fillField = (templDir, field, value) => {
+const fillField = (template, field, value) => {
     const pattern = new RegExp("{{" + field + "}}", "gm");
     return template.replace(pattern, value);
 };

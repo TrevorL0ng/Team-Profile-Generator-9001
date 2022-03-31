@@ -2,6 +2,7 @@
 const path = require("path");
 const fs = require("fs");
 
+
 //Linking the pathway of the templates using the path module
 const templDir = path.resolve(__dirname, "../templ");
 
@@ -17,6 +18,7 @@ const render = employees => {
     html.push(employees 
         .filter(employee => employee.getRole() === "Manager")
         .map(manager => renderManager(manager)));
+        console.log(html);
 
     return renderMain(html.join(""));
 };
@@ -27,7 +29,7 @@ const renderEngineer = engineer => {
     template = fillField(template, "name", engineer.getName());
     template = fillField(template, "role", engineer.getRole());
     template = fillField(template, "email", engineer.getEmail());
-    template = fillField(template, "id", engineer.getId());
+    template = fillField(template, "id", engineer.getID());
     template = fillField(template, "github", engineer.getGithub());
     return template;
 };
@@ -37,7 +39,7 @@ const renderIntern = intern => {
     template = fillField(template, "name", intern.getName());
     template = fillField(template, "role", intern.getRole());
     template = fillField(template, "email", intern.getEmail());
-    template = fillField(template, "id", intern.getId());
+    template = fillField(template, "id", intern.getID());
     template = fillField(template, "school", intern.getschool());
     return template;
 };
@@ -47,7 +49,7 @@ const renderManager = manager => {
     template = fillField(template, "name", manager.getName());
     template = fillField(template, "role", manager.getRole());
     template = fillField(template, "email", manager.getEmail());
-    template = fillField(template, "id", manager.getId());
+    template = fillField(template, "id", manager.getID());
     template = fillField(template, "officeNo", manager.getOfficeNumber());
     return template;
 };
@@ -59,7 +61,7 @@ renderMain = html => {
 
 const fillField = (template, field, value) => {
     const pattern = new RegExp("{{" + field + "}}", "gm");
-    return template.replace(pattern, value);
+    return template.replace("{{ " + field + " }}", value);
 };
 
 module.exports = render;
